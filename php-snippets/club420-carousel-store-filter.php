@@ -1,6 +1,6 @@
 // Club420 Carousel Store Filter - REAL-TIME SCHEDULING + CACHE EXCLUSION
 // Clean Production Version
-
+<?php
 add_filter('woocommerce_shortcode_products_query', 'club420_realtime_filter_with_scheduling', 10, 2);
 function club420_realtime_filter_with_scheduling($args, $atts) {
     
