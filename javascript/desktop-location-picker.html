@@ -27,7 +27,7 @@
   background: #000;
   color: #fff;
   border: 2px solid #fff;
-  border-radius: 12px;
+  border-radius: 9px;
   padding: 15px 25px;
   width: 100%;
   display: flex;
@@ -40,13 +40,7 @@
   box-sizing: border-box;
 }
 
-.location-button:hover {
-  background: #333;
-  transform: translateY(-1px);
-}
-
 .location-button.active {
-  border-color: #f2ac1d;
   background: #111;
 }
 
@@ -71,13 +65,18 @@
 
 .location-arrow {
   color: #fff;
-  font-size: 18px;
-  transition: transform 0.3s ease, font-size 0.3s ease;
+  font-size: 28px;
+  transition: transform 0.3s ease;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
 }
 
 .location-button.active .location-arrow {
   transform: rotate(90deg);
-  font-size: 22px;
+  font-size: 28px;
 }
 
 .location-dropdown {
@@ -86,7 +85,7 @@
   left: 0;
   right: 0;
   background: #fff;
-  border-radius: 15px;
+  border-radius: 9px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   opacity: 0;
   visibility: hidden;
@@ -114,8 +113,9 @@
   color: #333;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 15px;
+  position: relative;
 }
 
 .location-option:hover {
@@ -124,6 +124,20 @@
 }
 
 .location-option.selected {
+  background: #fff;
+  color: #333;
+  font-weight: 400;
+  cursor: default;
+}
+
+.location-option.selected::before {
+  content: "✓ ";
+  color: #000;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.location-option:not(.selected) {
   background: #f2ac1d;
   color: #000;
   font-weight: 600;
