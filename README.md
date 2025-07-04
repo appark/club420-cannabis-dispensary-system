@@ -10,14 +10,14 @@ Complete WordPress/WooCommerce + Tymber integration for cannabis dispensaries wi
 - **Cannabis compliance** - Age gate verification with cross-system persistence
 - **Seamless user experience** - One-time verification across WordPress ↔ Tymber
 - **Store-specific content** - Same pages, different content based on store selection
-- **Advanced location pickers** - Desktop header + mobile menu transformation
+- **Advanced location pickers** - Desktop header + mobile menu transformation with optimized UX
 
 ## 🎯 **System Architecture**
 
 ```
 WordPress Site (club420.com)
 ├── Age Gate + Store Picker → localStorage state management
-├── Desktop Location Picker → Divi Builder header component  
+├── Desktop Location Picker → Optimized UX with action-focused design
 ├── Mobile Location Picker → WordPress menu transformation
 ├── Store-Specific Content → CSS class visibility system
 ├── WooCommerce Products → Real-time scheduling + store filtering
@@ -40,7 +40,7 @@ Tymber Integration (Proxy Pass)
 | **PHP Snippet 5** | ✅ Production | BlazeSlider carousel `[club420_deals_carousel]` | Code Snippets plugin |
 | **PHP Snippet 6** | ✅ Production | Scheduler dashboard `[club420_scheduler_dashboard]` | Code Snippets plugin |
 | **Age Gate + Store Picker** | ✅ Production | Cannabis compliance + localStorage | Divi Body JavaScript |
-| **Desktop Location Picker** | ✅ Production | Header black button with elegant dropdown | Divi Builder (Code module) |
+| **Desktop Location Picker** | ✅ Production | Optimized UX with action-focused design | Divi Builder (Code module) |
 | **Mobile Location Picker** | ✅ Production | LOCATIONS menu styled as collapsible button | WordPress Menu + CSS + JavaScript |
 | **Content Visibility System** | ✅ Production | `.davis-content` / `.dixon-content` classes | CSS + JavaScript |
 | **Store Dropdown Sync** | ✅ Production | Multiple synchronized dropdowns | Auto-detection pattern |
@@ -97,7 +97,14 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 - **Store Picker** - Location selection with cross-system persistence
 - **Content Visibility** - Shows/hides sections based on store selection
 - **Menu Navigation** - Intercepts clicks and routes to appropriate Tymber URLs
-- **Location Pickers** - Desktop (header) + Mobile (menu transformation) 
+- **Location Pickers** - Desktop (optimized UX) + Mobile (menu transformation)
+
+### **Desktop Location Picker - Optimized UX**
+- **Action-focused design** - Highlights switchable location, not current location
+- **Clear status indicators** - Current location shows checkmark, other location shows in brand yellow
+- **Consistent 9px border radius** - Button and dropdown perfectly aligned
+- **28px arrows** - Properly sized for visibility and accessibility
+- **No hover effects** - Clean, professional appearance
 
 ### **User Experience Flow**
 1. **User lands** on club420.com → Age gate appears
@@ -122,7 +129,7 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 │   └── snippet-6-dashboard.php       # Scheduling monitoring dashboard
 ├── javascript/                       # Frontend JavaScript components
 │   ├── body-javascript-complete.html # Complete Divi body integration
-│   ├── desktop-location-picker.html  # Header location picker (Code module)
+│   ├── desktop-location-picker.html  # Optimized header location picker
 │   └── mobile-menu-transformation.js # Mobile LOCATIONS menu override
 ├── css/                              # Styling components
 │   ├── mobile-menu-complete.css     # Complete mobile menu transformation
@@ -153,6 +160,7 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 4. **Text-based Navigation** - Menu routing based on link text, not URLs
 5. **Cache Exclusion** - WP Engine cache bypassed for scheduled content
 6. **Nuclear Mobile Override** - Complete Divi menu behavior replacement
+7. **Optimized Desktop UX** - Action-focused design with clear status indicators
 
 ### **Key Technical Dependencies:**
 - **Store IDs** must match between WordPress and Tymber systems
@@ -161,6 +169,16 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 - **WordPress menu structure** with specific CSS classes
 - **Divi Builder** for header location picker
 - **Code Snippets plugin** for PHP implementation
+
+## 🚀 **Recent UX Improvements**
+
+### **Desktop Location Picker Enhancements:**
+- **Action-focused design** - Yellow highlights the switchable location, not current
+- **Clear status indicators** - Current location shows checkmark (✓), other location shows in action color
+- **Consistent border radius** - 9px for both button and dropdown
+- **Larger arrows** - 28px for better visibility
+- **No hover effects** - Clean, professional appearance
+- **Optimized for accessibility** - Proper contrast and visual hierarchy
 
 ## 🚀 **Getting Started**
 
@@ -186,6 +204,7 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 - **Store IDs**: Hardcoded throughout system - see customization guide if changing
 - **Cache Exclusion**: Critical for real-time scheduling functionality
 - **Mobile Menu**: Requires specific WordPress menu structure to work
+- **Desktop UX**: Optimized for action-focused user experience
 
 ## 📞 **Support & Documentation**
 
@@ -195,4 +214,4 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 
 ---
 
-**🍃 Club420: Complete Cannabis Dispensary Integration - Production Ready System**
+**🍃 Club420: Complete Cannabis Dispensary Integration - Production Ready System with Optimized UX**
