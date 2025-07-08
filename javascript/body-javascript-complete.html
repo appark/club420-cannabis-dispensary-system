@@ -1,4 +1,4 @@
-<!-- COMPLETE Club420 System - MOBILE LOCATIONS FIXED -->
+<!-- COMPLETE Club420 System - MOBILE LOCATIONS + SHOP COLLAPSE -->
 
 <style>
   @keyframes fadeIn {
@@ -1069,6 +1069,78 @@
     }, 2000);
   });
 
+  // ========================================= 
+  // SHOP MENU COLLAPSE - NEW ADDITION
+  // ========================================= 
+  window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      console.log('Club420: Initializing shop menu collapse...');
+      
+      // Only target shop categories (exclude LOCATIONS with dt-hide-on-desktop)
+      const shopMenuItems = document.querySelectorAll('ul.et_mobile_menu .menu-item-has-children:not(.dt-hide-on-desktop)');
+      
+      if (shopMenuItems.length === 0) {
+        console.log('Club420: No shop menu items found');
+        return;
+      }
+      
+      console.log(`Club420: Found ${shopMenuItems.length} shop menu items to make collapsible`);
+      
+      shopMenuItems.forEach(function(menuItem) {
+        const menuLink = menuItem.querySelector('a');
+        const submenu = menuItem.querySelector('.sub-menu');
+        
+        if (!menuLink || !submenu) return;
+        
+        // Add click handler for toggle
+        menuLink.addEventListener('click', function(e) {
+          console.log('Club420: Toggling shop submenu for:', menuLink.textContent.trim());
+          
+          // Close other shop submenus (accordion effect)
+          shopMenuItems.forEach(function(otherItem) {
+            if (otherItem !== menuItem) {
+              otherItem.classList.remove('shop-expanded');
+            }
+          });
+          
+          // Toggle current submenu
+          menuItem.classList.toggle('shop-expanded');
+          
+          // If submenu is now open, prevent navigation
+          if (menuItem.classList.contains('shop-expanded')) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          // If submenu is closed, allow normal navigation
+        });
+        
+        // Close submenu when clicking submenu items
+        const submenuLinks = submenu.querySelectorAll('a');
+        submenuLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            // Allow normal navigation for submenu items
+            console.log('Club420: Navigating to submenu item:', link.textContent.trim());
+          });
+        });
+      });
+      
+      console.log('Club420: Shop menu collapse initialized successfully');
+      
+    }, 2500); // Run after LOCATIONS system is initialized
+  });
+
+  // Close shop menus when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('ul.et_mobile_menu')) {
+      const expandedShopItems = document.querySelectorAll('ul.et_mobile_menu .menu-item-has-children.shop-expanded');
+      expandedShopItems.forEach(function(item) {
+        if (!item.classList.contains('dt-hide-on-desktop')) {
+          item.classList.remove('shop-expanded');
+        }
+      });
+    }
+  });
+
   window.setStore = setStoreSmoothReload;
 
   // MENU MANAGER (unchanged)
@@ -1181,6 +1253,7 @@
   });
 
   console.log('🍃 Club420: Complete system active - NUCLEAR mobile LOCATIONS completely overrides Divi! 📱💣✅');
+  console.log('🛍️ Club420: Shop menu collapse system loaded');
 </script>
 
 <script>
