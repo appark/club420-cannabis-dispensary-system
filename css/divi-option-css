@@ -1,0 +1,249 @@
+/*reduce menu item spacing*/
+.et_pb_menu .et-menu > li {
+    padding-right: 7px;
+    padding-left: 7px;
+}
+
+/* Hide WooCommerce Cart Icon */
+.et-cart-info { display: none !important; }
+
+/* Hide Menu item on Desktop */
+@media (min-width: 981px) {
+  .dt-hide-on-desktop {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .mobile_menu_bar:before {
+    color: #f2ac1d !important;
+    font-size: 50px !important;
+  }
+}
+
+/* ========================================= */
+/* MOBILE MENU - COMPLETE SYSTEM */
+/* ========================================= */
+
+/* Mobile menu container */
+ul.et_mobile_menu {
+    background: #fff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    margin: 10px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+/* All menu items */
+ul.et_mobile_menu .menu-item a {
+    padding: 18px 25px !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    color: #333 !important;
+    text-transform: uppercase !important;
+    background: #fff !important;
+    display: block !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Menu item hover */
+ul.et_mobile_menu .menu-item a:hover {
+    background: #f8f9fa !important;
+    color: #f2ac1d !important;
+    padding-left: 35px !important;
+    border-left: 4px solid #f2ac1d !important;
+}
+
+@media (max-width: 980px) {
+  
+  /* ========================================= */
+  /* LOCATIONS SYSTEM (KEEP AS-IS) */
+  /* ========================================= */
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop .sub-menu {
+    display: none !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+  
+  /* LOCATIONS BUTTON STYLING */
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop > a {
+    background: #000 !important;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+    border-radius: 12px !important;
+    margin: 10px 15px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    position: relative !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  
+  /* FIXED: Remove "Change Location" text - show only "Locations" */
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop > a:before {
+    content: none !important;
+  }
+  
+  /* Arrow */
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop > a:after {
+    content: "›" !important;
+    font-size: 18px !important;
+    transition: transform 0.3s ease !important;
+  }
+  
+  /* Arrow rotation when open */
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop.open > a:after {
+    transform: rotate(90deg) !important;
+  }
+  
+  /* LOCATIONS DROPDOWN - 2-COLUMN GRID ONLY */
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop.open .sub-menu {
+    display: flex !important;
+    opacity: 1 !important;
+    height: auto !important;
+    background: #fff !important;
+    border-radius: 15px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+    margin: 10px 15px 20px 15px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: none !important;
+  }
+  
+  /* Davis and Dixon - Equal width columns */
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop .sub-menu .menu-item {
+    flex: 1 !important;
+    width: 50% !important;
+    display: block !important;
+  }
+  
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop .sub-menu .menu-item a {
+    padding: 20px 25px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #333 !important;
+    text-transform: none !important;
+    background: #fff !important;
+    border: none !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Border between Davis and Dixon */
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop .sub-menu .menu-item:nth-child(2) a {
+    border-left: 1px solid #f0f0f0 !important;
+  }
+  
+  /* Hover effects */
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop .sub-menu .menu-item a:hover {
+    background: #f8f9fa !important;
+    color: #f2ac1d !important;
+    padding-left: 25px !important;
+    border-left: 1px solid #f0f0f0 !important;
+  }
+  
+  /* Second column hover - maintain border */
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop .sub-menu .menu-item:nth-child(2) a:hover {
+    border-left: 1px solid #f0f0f0 !important;
+  }
+  
+  /* Selected state - Yellow background */
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop .sub-menu .menu-item.selected a {
+    background: #f2ac1d !important;
+    color: #000 !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Selected state second column - maintain border */
+  ul.et_mobile_menu .menu-item-has-children.dt-hide-on-desktop .sub-menu .menu-item:nth-child(2).selected a {
+    border-left: 1px solid #f0f0f0 !important;
+  }
+
+  /* ========================================= */
+  /* SHOP MENU COLLAPSE (NEW) */
+  /* ========================================= */
+  
+  /* Hide shop submenus by default (NOT LOCATIONS) */
+  ul.et_mobile_menu .menu-item-has-children:not(.dt-hide-on-desktop) .sub-menu {
+    display: none !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Add toggle icon to shop categories only */
+  ul.et_mobile_menu .menu-item-has-children:not(.dt-hide-on-desktop) > a {
+    position: relative !important;
+  }
+  
+  ul.et_mobile_menu .menu-item-has-children:not(.dt-hide-on-desktop) > a:after {
+    content: "+" !important;
+    position: absolute !important;
+    right: 25px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    color: #f2ac1d !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Show submenu when shop category is expanded */
+  ul.et_mobile_menu .menu-item-has-children:not(.dt-hide-on-desktop).shop-expanded .sub-menu {
+    display: block !important;
+    opacity: 1 !important;
+    height: auto !important;
+    animation: slideDown 0.3s ease !important;
+  }
+  
+  /* Change icon when expanded */
+  ul.et_mobile_menu .menu-item-has-children:not(.dt-hide-on-desktop).shop-expanded > a:after {
+    content: "−" !important;
+    transform: rotate(0deg) !important;
+  }
+  
+  /* Style the expanded shop submenus */
+  ul.et_mobile_menu .menu-item-has-children:not(.dt-hide-on-desktop) .sub-menu .menu-item a {
+    padding-left: 45px !important;
+    background: #f8f9fa !important;
+    border-left: 3px solid #f2ac1d !important;
+    font-size: 14px !important;
+    text-transform: none !important;
+  }
+  
+  /* Hover effect for shop subcategories */
+  ul.et_mobile_menu .menu-item-has-children:not(.dt-hide-on-desktop) .sub-menu .menu-item a:hover {
+    background: #f2ac1d !important;
+    color: #000 !important;
+    padding-left: 50px !important;
+  }
+}
+
+/* Remove border from last menu item */
+ul.et_mobile_menu > .menu-item:last-child > a {
+    border-bottom: none !important;
+}
+
+/* Slide down animation for shop menus */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
