@@ -1,6 +1,6 @@
 # Club420 Cannabis Dispensary - Complete Multi-Store Integration System
 
-> **🚀 Status: PRODUCTION READY** | **All Components Fully Tested & Working** | **July 2025**
+> **🚀 Status: PRODUCTION READY** | **All Components Fully Tested & Working** | **Shop Menu Collapse Added - July 2025**
 
 ## 🏗️ **What This System Does**
 
@@ -11,6 +11,7 @@ Complete WordPress/WooCommerce + Tymber integration for cannabis dispensaries wi
 - **Seamless user experience** - One-time verification across WordPress ↔ Tymber
 - **Store-specific content** - Same pages, different content based on store selection
 - **Advanced location pickers** - Desktop header + mobile menu transformation with optimized UX
+- **🆕 Shop menu collapse** - Mobile shop categories now collapsible for better UX
 
 ## 🎯 **System Architecture**
 
@@ -19,6 +20,7 @@ WordPress Site (club420.com)
 ├── Age Gate + Store Picker → localStorage state management
 ├── Desktop Location Picker → Optimized UX with action-focused design
 ├── Mobile Location Picker → WordPress menu transformation
+├── Mobile Shop Collapse → Collapsible shop categories (NEW)
 ├── Store-Specific Content → CSS class visibility system
 ├── WooCommerce Products → Real-time scheduling + store filtering
 └── Menu Navigation → Text-based routing to Tymber
@@ -42,6 +44,7 @@ Tymber Integration (Proxy Pass)
 | **Age Gate + Store Picker** | ✅ Production | Cannabis compliance + localStorage | Divi Body JavaScript |
 | **Desktop Location Picker** | ✅ Production | Optimized UX with action-focused design | Divi Builder (Code module) |
 | **Mobile Location Picker** | ✅ Production | LOCATIONS menu styled as collapsible button | WordPress Menu + CSS + JavaScript |
+| **🆕 Mobile Shop Collapse** | ✅ Production | Collapsible shop categories with + / − icons | CSS + JavaScript Integration |
 | **Content Visibility System** | ✅ Production | `.davis-content` / `.dixon-content` classes | CSS + JavaScript |
 | **Store Dropdown Sync** | ✅ Production | Multiple synchronized dropdowns | Auto-detection pattern |
 | **Menu Navigation** | ✅ Production | Text-based routing to Tymber categories | JavaScript interception |
@@ -51,8 +54,8 @@ Tymber Integration (Proxy Pass)
 ### **Required WordPress Setup:**
 1. **Plugins**: Code Snippets, WooCommerce, Divi Theme
 2. **Install 6 PHP snippets** via Code Snippets plugin
-3. **Add complete Body JavaScript** to Divi Theme Options → Integration → Body
-4. **Add mobile menu CSS** to Divi → Customize → Additional CSS
+3. **Add complete Body JavaScript** to Divi Theme Options → Integration → Body (now includes shop collapse)
+4. **Add mobile menu CSS** to Divi → Customize → Additional CSS (now includes shop collapse)
 5. **Create WordPress menu** with LOCATIONS item (CSS class: `dt-hide-on-desktop`)
 6. **Add desktop location picker** to Divi Builder header (Code module)
 
@@ -98,6 +101,15 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 - **Content Visibility** - Shows/hides sections based on store selection
 - **Menu Navigation** - Intercepts clicks and routes to appropriate Tymber URLs
 - **Location Pickers** - Desktop (optimized UX) + Mobile (menu transformation)
+- **🆕 Shop Collapse** - Collapsible shop categories with accordion behavior
+
+### **🆕 Mobile Shop Menu Collapse System**
+- **Surgical Targeting** - Only affects shop categories, leaves LOCATIONS untouched
+- **CSS Selector** - `:not(.dt-hide-on-desktop)` excludes LOCATIONS system
+- **Toggle Icons** - + / − icons for expand/collapse state
+- **Accordion Effect** - Only one shop submenu open at a time
+- **Smooth Animation** - slideDown animation for submenu expansion
+- **Navigation Preservation** - Submenu items still navigate normally
 
 ### **Desktop Location Picker - Optimized UX**
 - **Action-focused design** - Highlights switchable location, not current location
@@ -111,15 +123,16 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 2. **Age verification** → localStorage: `'tymber-user-has-allowed-age': 'true'`
 3. **Store selection** → localStorage: `'last-store-selected': store_id`
 4. **Content adapts** → Davis/Dixon specific sections become visible
-5. **Menu navigation** → Routes to appropriate Tymber store (/menu/f-street/ or /menu/highway-80/)
-6. **Tymber pages** → Read localStorage, no re-verification needed
+5. **🆕 Mobile menu** → Shop categories collapsed with + icons, LOCATIONS unchanged
+6. **Menu navigation** → Routes to appropriate Tymber store (/menu/f-street/ or /menu/highway-80/)
+7. **Tymber pages** → Read localStorage, no re-verification needed
 
 ## 📁 **Repository Structure**
 
 ```
-├── README.md                          # This overview document
-├── INSTALLATION.md                    # Complete step-by-step setup guide
-├── ARCHITECTURE.md                    # Deep technical architecture explanation
+├── README.md                          # This overview document (UPDATED)
+├── INSTALLATION.md                    # Complete step-by-step setup guide (UPDATED)
+├── ARCHITECTURE.md                    # Deep technical architecture explanation (UPDATED)
 ├── php-snippets/                      # 6 PHP files for Code Snippets plugin
 │   ├── snippet-1-store-filter.php    # Store filtering + cache exclusion
 │   ├── snippet-2-product-scheduler.php # Admin scheduling interface  
@@ -128,25 +141,26 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 │   ├── snippet-5-carousel.php        # BlazeSlider carousel system
 │   └── snippet-6-dashboard.php       # Scheduling monitoring dashboard
 ├── javascript/                       # Frontend JavaScript components
-│   ├── body-javascript-complete.html # Complete Divi body integration
+│   ├── body-javascript-complete.html # Complete Divi body integration (UPDATED)
 │   ├── desktop-location-picker.html  # Optimized header location picker
 │   └── mobile-menu-transformation.js # Mobile LOCATIONS menu override
 ├── css/                              # Styling components
-│   ├── mobile-menu-complete.css     # Complete mobile menu transformation
+│   ├── mobile-menu-complete.css     # Complete mobile menu transformation (UPDATED)
 │   └── store-dropdown-styles.css    # Page dropdown styling
 ├── divi-integration/                 # Divi-specific setup files
 │   ├── store-dropdown-examples.html # Multiple dropdown HTML examples
 │   ├── content-organization.md      # CSS class system guide
 │   └── header-setup-guide.md       # Desktop location picker installation
 ├── docs/                            # Technical documentation
-│   ├── user-flow-complete.md       # End-to-end user journey
+│   ├── user-flow-complete.md       # End-to-end user journey (UPDATED)
 │   ├── tymber-integration.md       # Proxy setup + localStorage sharing
 │   ├── scheduling-system.md        # Real-time scheduling deep dive
-│   ├── troubleshooting.md          # Common issues & solutions
+│   ├── troubleshooting.md          # Common issues & solutions (UPDATED)
 │   └── customization-guide.md      # Adapting for other businesses
 └── assets/                         # Screenshots and diagrams
     ├── desktop-location-picker.png
     ├── mobile-menu-transformation.png
+    ├── mobile-shop-collapse.png     # NEW: Shop collapse demo
     ├── admin-scheduler-interface.png
     └── system-architecture-diagram.png
 ```
@@ -159,8 +173,9 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 3. **CSS Class Visibility** - Same page, different content per store
 4. **Text-based Navigation** - Menu routing based on link text, not URLs
 5. **Cache Exclusion** - WP Engine cache bypassed for scheduled content
-6. **Nuclear Mobile Override** - Complete Divi menu behavior replacement
+6. **Nuclear Mobile Override** - Complete Divi menu behavior replacement for LOCATIONS
 7. **Optimized Desktop UX** - Action-focused design with clear status indicators
+8. **🆕 Surgical Shop Collapse** - Collapsible shop menus without affecting LOCATIONS
 
 ### **Key Technical Dependencies:**
 - **Store IDs** must match between WordPress and Tymber systems
@@ -171,6 +186,13 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 - **Code Snippets plugin** for PHP implementation
 
 ## 🚀 **Recent UX Improvements**
+
+### **🆕 Mobile Shop Menu Collapse (Latest Addition):**
+- **Collapsible Categories** - Shop, Flower, Cartridges, Edibles, etc. now collapse
+- **+ / − Toggle Icons** - Clear visual indicators for expand/collapse state
+- **Accordion Behavior** - Only one shop submenu open at a time
+- **LOCATIONS Preserved** - Zero conflicts with existing LOCATIONS system
+- **Smooth Animations** - Professional slideDown effects for menu expansion
 
 ### **Desktop Location Picker Enhancements:**
 - **Action-focused design** - Yellow highlights the switchable location, not current
@@ -183,19 +205,21 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 ## 🚀 **Getting Started**
 
 ### **For New Developers:**
-1. Read [INSTALLATION.md](INSTALLATION.md) for complete setup
-2. Review [ARCHITECTURE.md](ARCHITECTURE.md) for system understanding
-3. Test with [user-flow-complete.md](docs/user-flow-complete.md)
+1. Read [INSTALLATION.md](INSTALLATION.md) for complete setup (updated with shop collapse)
+2. Review [ARCHITECTURE.md](ARCHITECTURE.md) for system understanding (updated)
+3. Test with [user-flow-complete.md](docs/user-flow-complete.md) (updated)
 
 ### **For System Maintenance:**
 1. Monitor with `[club420_scheduler_dashboard]` shortcode
 2. Add products using Snippet 2 admin interface
 3. Update store content using CSS class system
+4. Shop collapse works automatically - no maintenance needed
 
 ### **For Troubleshooting:**
-1. Check [troubleshooting.md](docs/troubleshooting.md) for common issues
+1. Check [troubleshooting.md](docs/troubleshooting.md) for common issues (updated)
 2. Verify localStorage values in browser console
 3. Confirm proxy pass configuration
+4. Test shop collapse functionality separately from LOCATIONS
 
 ## ⚠️ **Important Notes**
 
@@ -205,6 +229,7 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 - **Cache Exclusion**: Critical for real-time scheduling functionality
 - **Mobile Menu**: Requires specific WordPress menu structure to work
 - **Desktop UX**: Optimized for action-focused user experience
+- **🆕 Shop Collapse**: Uses surgical CSS targeting to avoid LOCATIONS conflicts
 
 ## 📞 **Support & Documentation**
 
@@ -212,6 +237,8 @@ Dixon Store: '7029749f-9c6d-419e-b037-5c1b566f3df9' → /menu/highway-80/
 
 **System created**: 2025 | **Language**: PHP/JavaScript | **Framework**: WordPress/Divi | **Integration**: Tymber/Blaze
 
+**Latest Update**: July 2025 - Added mobile shop menu collapse functionality
+
 ---
 
-**🍃 Club420: Complete Cannabis Dispensary Integration - Production Ready System with Optimized UX**
+**🍃 Club420: Complete Cannabis Dispensary Integration - Production Ready System with Mobile Shop Collapse**
